@@ -1,0 +1,803 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-primary: #1E1E1E;
+    --bg-secondary: #252526;
+    --text-primary: #D4D4D4;
+    --text-secondary: #858585;
+    --accent-primary: #569CD6;
+    --accent-secondary: #608B4E;
+    --terminal-green: #4EC9B0;
+    --terminal-yellow: #DCDCAA;
+    --terminal-red: #CE9178;
+}
+
+body {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background: var(--bg-primary);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+nav {
+    background: var(--bg-secondary);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--accent-primary);
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--terminal-green);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--terminal-green);
+}
+
+/* Sections */
+section {
+    padding: 5rem 0;
+    border-bottom: 1px solid var(--bg-secondary);
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: var(--terminal-yellow);
+}
+
+/* Home Section */
+#home {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background: var(--bg-primary);
+    position: relative;
+}
+
+#home::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--bg-secondary) 25%, transparent 25%),
+                linear-gradient(-45deg, var(--bg-secondary) 25%, transparent 25%);
+    background-size: 4px 4px;
+    opacity: 0.1;
+}
+
+.hero {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: var(--terminal-green);
+}
+
+.hero p {
+    color: var(--terminal-yellow);
+    font-size: 1.2rem;
+}
+
+/* About Section */
+.about-content {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--accent-primary);
+}
+
+.terminal-output {
+    font-family: 'JetBrains Mono', monospace;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+.terminal-prompt {
+    color: var(--terminal-green);
+    font-weight: bold;
+}
+
+.comment {
+    color: var(--accent-secondary);
+    font-weight: bold;
+}
+
+.command {
+    color: var(--terminal-yellow);
+    font-weight: bold;
+}
+
+.terminal-output br {
+    margin-bottom: 0.5em;
+}
+
+/* Directory listing style */
+.terminal-output [class^="drwx"] {
+    color: var(--terminal-green);
+    font-weight: normal;
+}
+
+/* Tree structure style */
+.terminal-output .tree {
+    color: var(--text-primary);
+}
+
+.terminal-output [class^="├──"],
+.terminal-output [class^="└──"] {
+    color: var(--accent-primary);
+    padding-left: 1em;
+}
+
+/* Add typing animation to the last command */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+.terminal-output .command:last-of-type {
+    display: inline-block;
+    overflow: hidden;
+    border-right: .15em solid var(--terminal-green);
+    white-space: nowrap;
+    animation: 
+        typing 3.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--terminal-green) }
+}
+
+/* About Section Expansion */
+.terminal-expanded {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--accent-primary);
+    transition: all 0.3s ease;
+}
+
+.terminal-expanded.hidden {
+    display: none;
+}
+
+.terminal-button {
+    background: transparent;
+    border: 1px solid var(--terminal-green);
+    color: var(--terminal-green);
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: left;
+}
+
+.terminal-button:hover {
+    background: rgba(78, 201, 176, 0.1);
+    border-color: var(--terminal-green);
+}
+
+.terminal-button .terminal-prompt {
+    color: var(--terminal-green);
+}
+
+/* Add a blinking cursor effect to the button */
+.terminal-button::after {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 15px;
+    background: var(--terminal-green);
+    margin-left: 5px;
+    animation: blink 1s step-end infinite;
+    vertical-align: middle;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* Smooth expansion animation */
+.terminal-expanded {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}
+
+.terminal-expanded:not(.hidden) {
+    max-height: 1000px;
+    transition: max-height 0.5s ease-in;
+}
+
+/* Terminal Photo Styles */
+.terminal-photo {
+    max-width: 400px;
+    margin: 0 auto 2rem;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    border: 1px solid var(--accent-primary);
+    overflow: hidden;
+}
+
+.terminal-photo .terminal-header {
+    background: var(--bg-primary);
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--accent-primary);
+}
+
+.terminal-photo-content {
+    padding: 1rem;
+}
+
+.photo-frame {
+    background: var(--bg-primary);
+    padding: 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    border: 1px solid var(--accent-primary);
+    position: relative;
+}
+
+.photo-frame::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(78, 201, 176, 0.1) 25%, 
+        transparent 25%, 
+        transparent 75%, 
+        rgba(78, 201, 176, 0.1) 75%);
+    background-size: 10px 10px;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.profile-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 2px;
+}
+
+.terminal-photo .terminal-line {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--text-primary);
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Add a glowing effect on hover */
+.photo-frame:hover::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border: 2px solid var(--terminal-green);
+    border-radius: 6px;
+    animation: glow 1.5s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 5px var(--terminal-green),
+                    0 0 10px var(--terminal-green),
+                    0 0 15px var(--terminal-green);
+    }
+    to {
+        box-shadow: 0 0 10px var(--terminal-green),
+                    0 0 20px var(--terminal-green),
+                    0 0 30px var(--terminal-green);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .terminal-photo {
+        max-width: 300px;
+    }
+}
+
+/* Portfolio Section */
+#portfolio {
+    padding: 4rem 0;
+}
+
+.terminal-window {
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    border: 1px solid var(--accent-primary);
+    margin: 2rem 0;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.terminal-header {
+    background: var(--bg-primary);
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--accent-primary);
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.terminal-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent-primary);
+    opacity: 0.7;
+}
+
+.terminal-content {
+    padding: 1.5rem;
+}
+
+.project-item {
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid var(--accent-primary);
+    padding-bottom: 2rem;
+}
+
+.project-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.project-header {
+    color: var(--terminal-green);
+    font-family: 'JetBrains Mono', monospace;
+    margin-bottom: 1rem;
+}
+
+.project-structure {
+    background: var(--bg-primary);
+    padding: 1rem;
+    border-radius: 4px;
+    margin: 1rem 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    overflow-x: auto;
+}
+
+.project-structure pre {
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.prompt {
+    color: var(--terminal-green);
+    margin-right: 0.5rem;
+}
+
+.command-output {
+    background: var(--bg-primary);
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+}
+
+.command-output .output {
+    color: var(--text-primary);
+    margin-top: 0.5rem;
+    white-space: pre-wrap;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+}
+
+/* Project structure tree styling */
+.project-structure pre {
+    color: var(--text-primary);
+}
+
+/* Add hover effect for project items */
+.project-item:hover .project-structure {
+    border: 1px solid var(--terminal-green);
+    transition: border-color 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .terminal-window {
+        margin: 1rem 0;
+    }
+
+    .project-structure {
+        font-size: 0.8rem;
+    }
+
+    .command-output {
+        font-size: 0.8rem;
+    }
+}
+
+/* Project Details and Read More Button */
+.project-details {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--accent-primary);
+    font-family: 'JetBrains Mono', monospace;
+    opacity: 1;
+    max-height: 1000px;
+    transition: all 0.3s ease-in-out;
+}
+
+.project-details.hidden {
+    opacity: 0;
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.read-more-btn {
+    background: var(--bg-primary);
+    border: 1px solid var(--accent-primary);
+    color: var(--terminal-green);
+    font-family: 'JetBrains Mono', monospace;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    width: 100%;
+    text-align: left;
+}
+
+.read-more-btn:hover {
+    background: var(--accent-primary);
+    color: var(--bg-primary);
+}
+
+.read-more-btn .prompt {
+    color: inherit;
+}
+
+/* Add typing animation for project details */
+.project-details:not(.hidden) {
+    animation: typing 0.5s steps(40, end);
+}
+
+@keyframes typing {
+    from { 
+        clip-path: inset(0 100% 0 0);
+    }
+    to { 
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+/* Style API endpoints */
+.project-details {
+    color: var(--text-primary);
+}
+
+.project-details br {
+    margin-bottom: 0.5rem;
+}
+
+/* Technical details styling */
+.project-details br + :not(br) {
+    color: var(--terminal-yellow);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.skill-category {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--accent-primary);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+    border-color: var(--terminal-green);
+}
+
+.skill-category h3 {
+    color: var(--terminal-green);
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    border-bottom: 2px solid var(--accent-primary);
+    padding-bottom: 0.5rem;
+}
+
+.skill-category ul {
+    list-style: none;
+}
+
+.skill-category li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 1.1rem;
+}
+
+.skill-category li:before {
+    content: "$";
+    position: absolute;
+    left: 0;
+    color: var(--terminal-yellow);
+}
+
+/* Contact Section */
+#contact {
+    padding: 4rem 0;
+    background-color: #1E1E1E;
+}
+
+.terminal-window {
+    background-color: #252526;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 2rem auto;
+    max-width: 800px;
+    overflow: hidden;
+}
+
+.terminal-header {
+    background-color: #323233;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #3E3E3E;
+}
+
+.terminal-title {
+    color: #DCDCAA;
+    font-size: 0.9rem;
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.terminal-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #4EC9B0;
+}
+
+.terminal-button:nth-child(2) {
+    background-color: #569CD6;
+}
+
+.terminal-button:nth-child(3) {
+    background-color: #DCDCAA;
+}
+
+.terminal-content {
+    padding: 1.5rem;
+    color: #D4D4D4;
+}
+
+.command-line {
+    margin-bottom: 1rem;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.prompt {
+    color: #4EC9B0;
+    margin-right: 0.5rem;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0 2rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background-color: #323233;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #D4D4D4;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: #3E3E3E;
+    transform: translateY(-2px);
+}
+
+.social-link i {
+    font-size: 1.5rem;
+    color: #4EC9B0;
+}
+
+.contact-form {
+    margin-top: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #323233;
+    border: 1px solid #3E3E3E;
+    border-radius: 4px;
+    color: #D4D4D4;
+    font-family: 'JetBrains Mono', monospace;
+    resize: vertical;
+}
+
+.form-group textarea {
+    min-height: 120px;
+}
+
+.submit-btn {
+    background-color: #4EC9B0;
+    color: #1E1E1E;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #3DA890;
+    transform: translateY(-2px);
+}
+
+#form-response {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+#form-response.success {
+    background-color: rgba(78, 201, 176, 0.1);
+    border: 1px solid #4EC9B0;
+}
+
+#form-response.error {
+    background-color: rgba(244, 71, 71, 0.1);
+    border: 1px solid #F44747;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Footer */
+footer {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    padding: 2rem 0;
+    text-align: center;
+    border-top: 1px solid var(--accent-primary);
+}
+
+.social-links a {
+    color: var(--text-primary);
+    margin: 0 1rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--terminal-green);
+}
+
+/* Terminal-like effects */
+::selection {
+    background: var(--terminal-green);
+    color: var(--bg-primary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    section {
+        padding: 3rem 0;
+    }
+    
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+}

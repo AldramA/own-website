@@ -1,0 +1,247 @@
+{
+  "totalVisits": 22,
+  "dailyVisits": {
+    "2024-12-01": 10,
+    "2024-11-30": 12
+  },
+  "browsers": {
+    "Firefox": 16,
+    "Firefox 134.0": 6
+  },
+  "countries": {
+    "Unknown": 22
+  },
+  "paths": {
+    "/api/portfolio": {
+      "views": 8,
+      "totalDuration": 0,
+      "avgDuration": 0
+    },
+    "/api/analytics/daily": {
+      "views": 12,
+      "totalDuration": 0,
+      "avgDuration": 0
+    },
+    "//api/analytics": {
+      "views": 2,
+      "totalDuration": 0,
+      "avgDuration": 0
+    }
+  },
+  "lastVisits": [
+    {
+      "timestamp": "2024-12-01T11:31:14.170Z",
+      "path": "//api/analytics",
+      "browser": "Firefox 134.0",
+      "country": "Unknown",
+      "isNewVisitor": false,
+      "duration": 0
+    },
+    {
+      "timestamp": "2024-12-01T11:28:20.434Z",
+      "path": "//api/analytics",
+      "browser": "Firefox 134.0",
+      "country": "Unknown",
+      "isNewVisitor": false,
+      "duration": 0
+    },
+    {
+      "timestamp": "2024-12-01T11:27:21.199Z",
+      "path": "/api/analytics/daily",
+      "browser": "Firefox 134.0",
+      "country": "Unknown",
+      "isNewVisitor": false,
+      "duration": 0
+    },
+    {
+      "timestamp": "2024-12-01T11:27:07.108Z",
+      "path": "/api/analytics/daily",
+      "browser": "Firefox 134.0",
+      "country": "Unknown",
+      "isNewVisitor": false,
+      "duration": 0
+    },
+    {
+      "timestamp": "2024-12-01T11:27:05.671Z",
+      "path": "/api/analytics/daily",
+      "browser": "Firefox 134.0",
+      "country": "Unknown",
+      "isNewVisitor": false,
+      "duration": 0
+    },
+    {
+      "timestamp": "2024-12-01T11:27:03.746Z",
+      "path": "/api/analytics/daily",
+      "browser": "Firefox 134.0",
+      "country": "Unknown",
+      "isNewVisitor": true,
+      "duration": 0
+    },
+    {
+      "timestamp": "2024-12-01T11:17:43.839Z",
+      "path": "/api/portfolio",
+      "browser": "Firefox",
+      "os": "Linux 64",
+      "platform": "Linux",
+      "country": "Unknown",
+      "city": "Unknown",
+      "ip": "::ffff:127.0.0.1"
+    },
+    {
+      "timestamp": "2024-12-01T11:17:39.312Z",
+      "path": "/api/analytics/daily",
+      "browser": "Firefox",
+      "os": "Linux 64",
+      "platform": "Linux",
+      "country": "Unknown",
+      "city": "Unknown",
+      "ip": "::ffff:127.0.0.1"
+    },
+    {
+      "timestamp": "2024-12-01T11:13:59.166Z",
+      "path": "/api/analytics/daily",
+      "browser": "Firefox",
+      "os": "Linux 64",
+      "platform": "Linux",
+      "country": "Unknown",
+      "city": "Unknown",
+      "ip": "::ffff:127.0.0.1"
+    },
+    {
+      "timestamp": "2024-12-01T11:13:38.801Z",
+      "path": "/api/analytics/daily",
+      "browser": "Firefox",
+      "os": "Linux 64",
+      "platform": "Linux",
+      "country": "Unknown",
+      "city": "Unknown",
+      "ip": "::ffff:127.0.0.1"
+    },
+    {
+      "timestamp": "2024-12-01T11:13:35.658Z",
+      "path": "/api/portfolio",
+      "browser": "Firefox",
+      "os": "Linux 64",
+      "platform": "Linux",
+      "country": "Unknown",
+      "city": "Unknown",
+      "ip": "::ffff:127.0.0.1"
+    },
+    {
+      "timestamp": "2024-12-01T11:13:30.206Z",
+      "path": "/api/analytics/daily",
+      "browser": "Firefox",
+      "os": "Linux 64",
+      "platform": "Linux",
+      "country": "Unknown",
+      "city": "Unknown",
+      "ip": "::ffff:127.0.0.1"
+    },
+    {
+      "timestamp": "2024-12-01T11:08:16.576Z",
+      "path": "/api/analytics/daily",
+      "browser": "Firefox",
+      "os": "Linux 64",
+      "platform": "Linux",
+      "country": "Unknown",
+      "city": "Unknown",
+      "ip": "::ffff:127.0.0.1"
+    },
+    {
+      "timestamp": "2024-12-01T11:08:13.308Z",
+      "path": "/api/portfolio",
+      "browser": "Firefox",
+      "os": "Linux 64",
+      "platform": "Linux",
+      "country": "Unknown",
+      "city": "Unknown",
+      "ip": "::ffff:127.0.0.1"
+    },
+    {
+      "timestamp": "2024-12-01T11:07:49.769Z",
+      "path": "/api/analytics/daily",
+      "browser": "Firefox",
+      "os": "Linux 64",
+      "platform": "Linux",
+      "country": "Unknown",
+      "city": "Unknown",
+      "ip": "::ffff:127.0.0.1"
+    },
+    {
+      "timestamp": "2024-12-01T11:07:48.261Z",
+      "path": "/api/portfolio",
+      "browser": "Firefox",
+      "os": "Linux 64",
+      "platform": "Linux",
+      "country": "Unknown",
+      "city": "Unknown",
+      "ip": "::ffff:127.0.0.1"
+    },
+    {
+      "timestamp": "2024-12-01T11:07:46.875Z",
+      "path": "/api/portfolio",
+      "browser": "Firefox",
+      "os": "Linux 64",
+      "platform": "Linux",
+      "country": "Unknown",
+      "city": "Unknown",
+      "ip": "::ffff:127.0.0.1"
+    },
+    {
+      "timestamp": "2024-12-01T11:07:43.542Z",
+      "path": "/api/analytics/daily",
+      "browser": "Firefox",
+      "os": "Linux 64",
+      "platform": "Linux",
+      "country": "Unknown",
+      "city": "Unknown",
+      "ip": "::ffff:127.0.0.1"
+    },
+    {
+      "timestamp": "2024-12-01T11:07:39.937Z",
+      "path": "/api/portfolio",
+      "browser": "Firefox",
+      "os": "Linux 64",
+      "platform": "Linux",
+      "country": "Unknown",
+      "city": "Unknown",
+      "ip": "::ffff:127.0.0.1"
+    },
+    {
+      "timestamp": "2024-12-01T11:07:23.695Z",
+      "path": "/api/analytics/daily",
+      "browser": "Firefox",
+      "os": "Linux 64",
+      "platform": "Linux",
+      "country": "Unknown",
+      "city": "Unknown",
+      "ip": "::ffff:127.0.0.1"
+    },
+    {
+      "timestamp": "2024-12-01T11:06:16.686Z",
+      "path": "/api/portfolio",
+      "browser": "Firefox",
+      "os": "Linux 64",
+      "platform": "Linux",
+      "country": "Unknown",
+      "city": "Unknown",
+      "ip": "::ffff:127.0.0.1"
+    },
+    {
+      "timestamp": "2024-12-01T11:06:11.107Z",
+      "path": "/api/portfolio",
+      "browser": "Firefox",
+      "os": "Linux 64",
+      "platform": "Linux",
+      "country": "Unknown",
+      "city": "Unknown",
+      "ip": "::ffff:127.0.0.1"
+    }
+  ],
+  "visitDurations": [],
+  "uniqueVisitors": [
+    "::ffff:127.0.0.1-Mozilla/5.0 (X11; Linux x86_64; rv:134.0) Gecko/20100101 Firefox/134.0"
+  ],
+  "averageVisitDuration": 0,
+  "returnRate": 95.45454545454545
+}

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammed Sobhi - Backend Engineer</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">~/muhammed_sobhi $</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="container">
+            <div class="hero">
+                <div class="terminal-photo">
+                    <div class="terminal-header">
+                        <span class="terminal-title">image-viewer.sh</span>
+                        <div class="terminal-buttons">
+                            <span class="terminal-button-red"></span>
+                            <span class="terminal-button-yellow"></span>
+                            <span class="terminal-button-green"></span>
+                        </div>
+                    </div>
+                    <div class="terminal-photo-content">
+                        <div class="photo-frame">
+                            <img src="assets/images/profile.jpg" alt="Muhammed Sobhi" class="profile-photo">
+                        </div>
+                        <div class="terminal-line">
+                            <span class="terminal-prompt">$</span> display profile.jpg
+                        </div>
+                    </div>
+                </div>
+                <h1>Muhammed Sobhi</h1>
+                <p class="terminal-text">$ whoami<br>Backend Engineer specializing in Node.js and Database Systems</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="terminal-output">
+                        <span class="terminal-prompt">$ cat about.md | head -n 10</span><br><br>
+                        <span class="comment"># Professional Overview</span><br>
+                        I'm a dedicated Backend Developer with 3+ years of experience crafting efficient, scalable, and secure backend systems. Working extensively on Linux, I specialize in Node.js and have a deep understanding of databases and their optimization.<br><br>
+                    </p>
+                    <div class="terminal-expanded hidden">
+                        <p class="terminal-output">
+                            <span class="comment"># Core Expertise</span><br>
+                            <span class="command">$ ls -l expertise/</span><br>
+                            drwxr-xr-x  RESTful APIs<br>
+                            drwxr-xr-x  Server Management<br>
+                            drwxr-xr-x  Database Optimization<br>
+                            drwxr-xr-x  System Integration<br><br>
+                            
+                            <span class="comment"># Technical Journey</span><br>
+                            My journey began with Python, which laid the foundation for my problem-solving skills, and expanded with C++ during my college years.<br><br>
+                            
+                            <span class="comment"># Diverse Experience</span><br>
+                            <span class="command">$ tree exploration/</span><br>
+                            exploration/<br>
+                            ├── Android Development<br>
+                            ├── Frontend Technologies<br>
+                            ├── Data Science<br>
+                            └── Ethical Hacking<br><br>
+                            
+                            <span class="command">$ echo "Let's create something extraordinary together!"</span>
+                        </p>
+                    </div>
+                    <button class="terminal-button" onclick="toggleAbout()">
+                        <span class="terminal-prompt">$ cat about.md | more</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <div class="container">
+            <h2>Portfolio</h2>
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <span class="terminal-title">portfolio.sh</span>
+                    <div class="terminal-buttons">
+                        <span class="terminal-button"></span>
+                        <span class="terminal-button"></span>
+                        <span class="terminal-button"></span>
+                    </div>
+                </div>
+                <div class="terminal-content">
+                    <div class="project-list">
+                        <!-- Book Store API -->
+                        <div class="project-item">
+                            <div class="project-header">
+                                <span class="prompt">$</span> cd Book_store-API/
+                            </div>
+                            <div class="project-structure">
+                                <pre>
+├── app.js
+├── controllers/
+│   ├── auth.js
+│   └── books.js
+├── models/
+│   ├── Book.js
+│   └── User.js
+├── routes/
+│   ├── auth.js
+│   └── books.js
+└── package.json</pre>
+                            </div>
+                            <div class="project-info">
+                                <div class="command-output">
+                                    <span class="prompt">$</span> cat README.md
+                                    <div class="output">
+                                        # Book Store API
+                                        A RESTful API for managing a book store inventory
+                                        • Complete CRUD operations for books
+                                        • User authentication & authorization
+                                        • MongoDB integration
+                                        • Express.js framework
+                                    </div>
+                                    <div class="project-details hidden">
+                                        <br>## Technical Details
+                                        • JWT-based authentication system
+                                        • MongoDB aggregation pipelines
+                                        • Express middleware for validation
+                                        • Error handling middleware
+                                        • Rate limiting implementation
+                                        • File upload functionality
+                                        • Search and filtering capabilities
+                                        
+                                        ## API Endpoints
+                                        • POST /api/v1/auth/register
+                                        • POST /api/v1/auth/login
+                                        • GET /api/v1/books
+                                        • POST /api/v1/books
+                                        • PATCH /api/v1/books/:id
+                                        • DELETE /api/v1/books/:id
+                                    </div>
+                                    <button class="read-more-btn">
+                                        <span class="prompt">$</span> more details
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Jobs API -->
+                        <div class="project-item">
+                            <div class="project-header">
+                                <span class="prompt">$</span> cd JOBS-API/
+                            </div>
+                            <div class="project-structure">
+                                <pre>
+├── app.js
+├── controllers/
+│   ├── auth.js
+│   └── jobs.js
+├── models/
+│   ├── Job.js
+│   └── User.js
+├── routes/
+│   ├── auth.js
+│   └── jobs.js
+└── middleware/
+    └── auth.js</pre>
+                            </div>
+                            <div class="project-info">
+                                <div class="command-output">
+                                    <span class="prompt">$</span> cat README.md
+                                    <div class="output">
+                                        # Jobs API
+                                        Advanced job posting and management system
+                                        • Job CRUD operations
+                                        • Advanced filtering & search
+                                        • Role-based access control
+                                        • Secure authentication
+                                    </div>
+                                    <div class="project-details hidden">
+                                        <br>## Technical Details
+                                        • Multi-user role system
+                                        • Advanced query parameters
+                                        • Custom authentication middleware
+                                        • MongoDB indexing optimization
+                                        • Input validation & sanitization
+                                        • Error handling system
+                                        • API documentation with Swagger
+                                        
+                                        ## API Endpoints
+                                        • POST /api/v1/auth/register
+                                        • POST /api/v1/auth/login
+                                        • GET /api/v1/jobs
+                                        • POST /api/v1/jobs
+                                        • GET /api/v1/jobs/:id
+                                        • PATCH /api/v1/jobs/:id
+                                        • DELETE /api/v1/jobs/:id
+                                    </div>
+                                    <button class="read-more-btn">
+                                        <span class="prompt">$</span> more details
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- JWT Basics -->
+                        <div class="project-item">
+                            <div class="project-header">
+                                <span class="prompt">$</span> cd JWT-basics/
+                            </div>
+                            <div class="project-structure">
+                                <pre>
+├── app.js
+├── controllers/
+│   └── auth.js
+├── middleware/
+│   └── auth.js
+└── routes/
+    └── auth.js</pre>
+                            </div>
+                            <div class="project-info">
+                                <div class="command-output">
+                                    <span class="prompt">$</span> cat README.md
+                                    <div class="output">
+                                        # JWT Authentication
+                                        Secure authentication implementation using JWT
+                                        • Token generation & validation
+                                        • Protected routes
+                                        • Middleware implementation
+                                        • Security best practices
+                                    </div>
+                                    <div class="project-details hidden">
+                                        <br>## Technical Details
+                                        • Secure token generation
+                                        • Token expiration handling
+                                        • Refresh token implementation
+                                        • Custom error classes
+                                        • Security headers
+                                        • XSS protection
+                                        • CORS configuration
+                                        
+                                        ## API Endpoints
+                                        • POST /api/v1/auth/login
+                                        • POST /api/v1/auth/refresh
+                                        • GET /api/v1/dashboard
+                                        • POST /api/v1/logout
+                                    </div>
+                                    <button class="read-more-btn">
+                                        <span class="prompt">$</span> more details
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Task Manager -->
+                        <div class="project-item">
+                            <div class="project-header">
+                                <span class="prompt">$</span> cd Task-Manager/
+                            </div>
+                            <div class="project-structure">
+                                <pre>
+├── app.js
+├── controllers/
+│   ├── auth.js
+│   └── tasks.js
+├── models/
+│   ├── Task.js
+│   └── User.js
+├── routes/
+│   ├── auth.js
+│   └── tasks.js
+└── middleware/
+    └── auth.js</pre>
+                            </div>
+                            <div class="project-info">
+                                <div class="command-output">
+                                    <span class="prompt">$</span> cat README.md
+                                    <div class="output">
+                                        # Task Manager API
+                                        Full-featured task management system
+                                        • Task CRUD operations
+                                        • User-specific tasks
+                                        • Status management
+                                        • Data validation
+                                    </div>
+                                    <div class="project-details hidden">
+                                        <br>## Technical Details
+                                        • User task relationships
+                                        • Task status workflow
+                                        • Due date handling
+                                        • Priority management
+                                        • Task filtering & sorting
+                                        • Pagination implementation
+                                        • Search functionality
+                                        
+                                        ## API Endpoints
+                                        • POST /api/v1/auth/register
+                                        • POST /api/v1/auth/login
+                                        • GET /api/v1/tasks
+                                        • POST /api/v1/tasks
+                                        • GET /api/v1/tasks/:id
+                                        • PATCH /api/v1/tasks/:id
+                                        • DELETE /api/v1/tasks/:id
+                                    </div>
+                                    <button class="read-more-btn">
+                                        <span class="prompt">$</span> more details
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>$ ls core-technologies/</h3>
+                    <ul>
+                        <li>JavaScript/Node.js</li>
+                        <li>Express.js</li>
+                        <li>RESTful APIs</li>
+                        <li>GraphQL</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>$ ls databases/</h3>
+                    <ul>
+                        <li>MongoDB</li>
+                        <li>PostgreSQL</li>
+                        <li>SQL</li>
+                        <li>Redis</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>$ ls backend-dev/</h3>
+                    <ul>
+                        <li>API Design & Development</li>
+                        <li>Database Design</li>
+                        <li>Authentication & Authorization</li>
+                        <li>Microservices Architecture</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>$ ls devops/</h3>
+                    <ul>
+                        <li>Git & Version Control</li>
+                        <li>Docker</li>
+                        <li>CI/CD</li>
+                        <li>AWS/Cloud Services</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <span class="terminal-title">contact.sh</span>
+                    <div class="terminal-buttons">
+                        <span class="terminal-button"></span>
+                        <span class="terminal-button"></span>
+                        <span class="terminal-button"></span>
+                    </div>
+                </div>
+                <div class="terminal-content">
+                    <div class="social-links">
+                        <div class="command-line">
+                            <span class="prompt">$</span> echo "Connect with me"
+                        </div>
+                        <div class="social-grid">
+                            <a href="https://github.com/AldramA" target="_blank" class="social-link">
+                                <i class="fab fa-github"></i>
+                                <span class="link-text">github.com/AldramA</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/muhammed-sobhi-27b3992b9/" target="_blank" class="social-link">
+                                <i class="fab fa-linkedin"></i>
+                                <span class="link-text">linkedin.com/in/muhammed-sobhi</span>
+                            </a>
+                            <a href="https://www.facebook.com/profile.php?id=61564013931640" target="_blank" class="social-link">
+                                <i class="fab fa-facebook"></i>
+                                <span class="link-text">facebook.com/muhammed.sobhi</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <div class="command-line">
+                            <span class="prompt">$</span> ./send-message.sh
+                        </div>
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <label for="name">
+                                    <span class="prompt">$</span> Name:
+                                </label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">
+                                    <span class="prompt">$</span> Email:
+                                </label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">
+                                    <span class="prompt">$</span> Message:
+                                </label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">
+                                <span class="prompt">$</span> Send Message
+                            </button>
+                        </form>
+                        <div id="form-response" class="hidden">
+                            <span class="prompt">$</span> <span class="response-message"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleAbout() {
+            var expanded = document.querySelector('.terminal-expanded');
+            var button = document.querySelector('.terminal-button');
+            if (expanded.classList.contains('hidden')) {
+                expanded.classList.remove('hidden');
+                button.innerHTML = '<span class="terminal-prompt">$ cat about.md | less</span>';
+            } else {
+                expanded.classList.add('hidden');
+                button.innerHTML = '<span class="terminal-prompt">$ cat about.md | more</span>';
+            }
+        }
+
+        var readMoreBtns = document.querySelectorAll('.read-more-btn');
+        readMoreBtns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var projectDetails = btn.parentNode.querySelector('.project-details');
+                if (projectDetails.classList.contains('hidden')) {
+                    projectDetails.classList.remove('hidden');
+                    btn.innerHTML = '<span class="prompt">$</span> less details';
+                } else {
+                    projectDetails.classList.add('hidden');
+                    btn.innerHTML = '<span class="prompt">$</span> more details';
+                }
+            });
+        });
+    </script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

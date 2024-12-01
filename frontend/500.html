@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>500 - Server Error</title>
+    <style>
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            background-color: #1E1E1E;
+            color: #D4D4D4;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        .terminal {
+            background-color: #252526;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #4EC9B0;
+            margin: 0 0 20px 0;
+        }
+        .error-code {
+            color: #569CD6;
+            font-size: 3em;
+            margin: 20px 0;
+        }
+        .message {
+            color: #DCDCAA;
+            margin: 20px 0;
+        }
+        .command-line {
+            background-color: #1E1E1E;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 20px 0;
+            text-align: left;
+        }
+        .prompt {
+            color: #4EC9B0;
+        }
+        .command {
+            color: #DCDCAA;
+        }
+        .error {
+            color: #F44747;
+        }
+        .stack {
+            color: #CE9178;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+        .link {
+            color: #569CD6;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+        }
+        .link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal">
+        <div class="error-code">500</div>
+        <h1>Internal Server Error</h1>
+        <div class="message">Something went wrong while processing your request.</div>
+        <div class="command-line">
+            <span class="prompt">visitor@portfolio:~$</span> 
+            <span class="command">./process-request.sh</span><br>
+            <span class="error">Segmentation fault (core dumped)</span>
+            <div class="stack">
+                Error: INTERNAL_SERVER_ERROR<br>
+                at ProcessRequest()<br>
+                at HandleRequest()<br>
+                at ServerResponse.send()
+            </div>
+        </div>
+        <a href="/" class="link">sudo reboot # Return Home</a>
+    </div>
+</body>
+</html>
